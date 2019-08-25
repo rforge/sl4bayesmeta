@@ -1,0 +1,10 @@
+Package: sl4bayesmeta
+Type: Package
+Title: Sensitivity and learning for the Bayesian meta-analysis 
+Version: 0.1-1
+Date: 2019-08-25
+Author: Manuela Ott [aut, cre], Malgorzata Roos [aut], 
+Maintainer: Manuela Ott <manuela.ott@uzh.ch>
+Description: Functionality for posterior inference, sensitivity and learning quantification in the Bayesian normal-normal hierarchical model used for Bayesian meta-analysis. Provides functions for heterogeneity prior adjustment with respect to tails or the latent model complexity for half-normal (HN), half-Cauchy (HC), exponential (EXP) and Lomax (LMX) priors. The functions operate on data sets which are compatible with the bayesmeta R package on CRAN.
+Depends: bayesmeta
+License: GPL (>=2)

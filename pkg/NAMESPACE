@@ -1,0 +1,16 @@
+
+importFrom("stats", "dexp", "dnorm", "integrate", "median", "qnorm",
+             "rexp", "uniroot")
+importFrom("bayesmeta", "bayesmeta", "dhalfnormal", "dhalfcauchy", "dlomax",
+	    "rhalfnormal", "rhalfcauchy", "rlomax")
+
+
+export(sensitivity_learning_table)
+export(pri_par_adjust_dynamic)
+export(pri_par_adjust_static)
+export(effective_rlmc)
+export(pri_par_epsilon_grid)
+export(sigma_ref)
+export(cal_h_dist)
+
+
