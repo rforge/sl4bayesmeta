@@ -36,7 +36,7 @@ is to take the tail probability \eqn{\alpha = 5 \%}{alpha = 5 \%}
 (\code{tail_prob=0.05}) and
 thresholds
 \eqn{UU=1} or \eqn{UU=2}
-(Spiegelhalter et al., 2004; Neuenschwander et al., 2010).
+(Spiegelhalter et al. 2004, Neuenschwander et al. 2010).
 For the half-normal distribution,
 these conditions lead to the HN(0.5) and HN(1) prior,
 respectively.

@@ -87,7 +87,8 @@ needs to be adjusted, but otherwise the same code can be used
 if a Bayesian normal-normal hierarchical model is appropriate.
 %%  ~~further notes~~
 }
-\section{Warning }{This function takes about 10 minutes to run
+\section{Warning }{
+This function takes ca. 5-10 minutes to run
 on the acute graft rejection data set given in the example below.
 }
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -114,7 +115,7 @@ df <- data.frame(y = log((rT*(nC-rC))/(rC*(nT-rT))), # log-OR
                  labels = c(1:2))
   
 # compute the table for the AGR data
-# warning: it takes about 10 minutes to run this function
+# warning: it takes ca. 5-10 minutes to run this function
 # on the above data set!
 sensitivity_learning_table(df)
 }

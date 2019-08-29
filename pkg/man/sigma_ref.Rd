@@ -10,7 +10,7 @@ Computes the reference standard deviation of the
 given meta-analysis data set.
 The reference standard deviation is defined as the geometric mean
 of the standard deviations of the individual studies
-(Sorbye & Rue (2014), equation (7)).
+(Sorbye & Rue 2014, equation (7)).
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{

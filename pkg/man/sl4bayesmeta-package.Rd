@@ -16,7 +16,7 @@ The methodology implemented is proposed in Ott et al. (2019).
 The function \code{\link{pri_par_adjust_dynamic}}() implements the novel heterogeneity prior adjustment
 with respect to the relative latent model complexity (RLMC).
 The function \code{\link{pri_par_adjust_static}}() implements the standard approach to
-heterogeneity prior tail adjustment (Spiegelhalter et al., 2004).
+heterogeneity prior tail adjustment (Spiegelhalter et al. 2004).
 }
 \details{
 Package: sl4bayesmeta
@@ -27,7 +27,7 @@ Title: Sensitivity and learning for the Bayesian meta-analysis
 
 Version: 0.1-1
 
-Date: 2019-08-25
+Date: 2019-08-29
 
 Author: Manuela Ott [aut, cre], Malgorzata Roos [aut] 
 
@@ -67,7 +67,7 @@ df <- data.frame(y = c(-2.310, -1.258), # log-odds-ratio
                   labels = c(1:2))
   
 # compute posterior, sensitivity and learning estimates for AGR data
-# warning: it takes about 10 minutes to run this function 
+# warning: it takes ca. 5-10 minutes to run this function 
 # on the above data set!
 sensitivity_learning_table(df)
 
