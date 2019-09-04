@@ -5,7 +5,7 @@ effective_rlmc<-function(df,
                           r.tau.prior,
                           MM=10^6,
                           output="sample",
-                          step=0.03){
+                          step=ifelse(output=="prob", 0.03, NULL)){
   # computation of the effective relative latent model complexity by MC sampling
   # input:
   # df: data frame containing a column df$sigma

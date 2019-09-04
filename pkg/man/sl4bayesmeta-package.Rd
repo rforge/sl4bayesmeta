@@ -27,7 +27,7 @@ Title: Sensitivity and learning for the Bayesian meta-analysis
 
 Version: 0.1-1
 
-Date: 2019-08-29
+Date: 2019-09-04
 
 Author: Manuela Ott [aut, cre], Malgorzata Roos [aut] 
 

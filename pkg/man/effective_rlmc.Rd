@@ -14,8 +14,8 @@ Assumes a Bayesian normal-normal hierarchical model.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-effective_rlmc(df, r.tau.prior, MM=10^6, output="sample", 
-               step=0.03)
+effective_rlmc(df, r.tau.prior, MM=10^6, output="sample",
+               step=ifelse(output=="prob", 0.03, NULL))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
