@@ -6,6 +6,7 @@ importFrom("bayesmeta", "bayesmeta", "dhalfnormal", "dhalfcauchy", "dlomax",
 
 
 export(sensitivity_learning_table)
+export(sensitivity_learning_table_flexible)
 export(pri_par_adjust_dynamic)
 export(pri_par_adjust_static)
 export(effective_rlmc)

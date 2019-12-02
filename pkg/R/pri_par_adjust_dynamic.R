@@ -1,11 +1,16 @@
 
-pri_par_adjust_dynamic <- function(df, rlmc=0.5, tail_prob=0.5){
+pri_par_adjust_dynamic <- function(df, rlmc=0.5, tail_prob=0.5, type_sigma_ref="geometric"){
   # function for a dynamic median RLMC-based scaling parameters adjustment for HN, EXP, HC, LMX
   # input:
   # df: data frame
   # rlmc: target relative latent model complexity 
   # output:
   # parameters for HN, EXP, HC, LMX
+  
+  # supporting packages
+  # library(bayesmeta)
+  # supporting functions
+  
   
   # ### Analytical formulae to find the scaling factor for a prior distribution fulfilling tail-adjustment given a threshold UU and an alpha tail-probability
   # ### U and alpha fixed -> how much is AA?
@@ -29,7 +34,7 @@ pri_par_adjust_dynamic <- function(df, rlmc=0.5, tail_prob=0.5){
   
   # computation of the reference threshold U_ref
   # P[tau>U_ref]=tail_prob
-  U_ref<-sqrt(rlmc/(1-rlmc))*sigma_ref(df)
+  U_ref<-sqrt(rlmc/(1-rlmc))*sigma_ref(df=df, type_sigma_ref=type_sigma_ref)
   
   # tail_prob adjusting
   p_HN <- AA_from_Ualpha_HN(U_ref, alpha=tail_prob)
@@ -40,3 +45,5 @@ pri_par_adjust_dynamic <- function(df, rlmc=0.5, tail_prob=0.5){
   return(list(p_HN=p_HN, p_EXP=p_EXP, p_HC=p_HC, p_LMX=p_LMX))
   
 }
+
+
