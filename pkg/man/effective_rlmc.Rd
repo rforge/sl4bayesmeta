@@ -8,7 +8,7 @@ Effective relative latent model complexity computation
 \description{
 Generates a Monte Carlo sample of relative latent model complexity (RLMC) values
 for the given meta-analysis data set and the prior distribution for the
-between-studies standard deviation.
+between-study standard deviation.
 Can also return estimates for plotting a smoothed histogram of effective RLMC values.
 Assumes a Bayesian normal-normal hierarchical model.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -56,7 +56,7 @@ If \code{output=="prob"}: a data frame with columns "x" and "y", giving the valu
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript submitted to \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
 %% ~put references to the literature/web site here ~
 }
 

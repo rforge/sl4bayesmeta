@@ -23,7 +23,7 @@ cal_h_dist(h)
 }
 }
 \details{
-For a given Hellinger distance h, the function returns mu, such that
+For a given Hellinger distance h, the function returns \eqn{mu}, such that
 \deqn{H(N(\mu, 1), N(0, 1))=h,}{H(N(mu, 1), N(0, 1))=h,}
 where H denotes the Hellinger distance.
 

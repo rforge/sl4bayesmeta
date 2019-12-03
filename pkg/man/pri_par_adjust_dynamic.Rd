@@ -8,7 +8,7 @@ Dynamic heterogeneity prior adjustment based on the relative latent model comple
 \description{
 Adjusts the scale parameter of 
 the half-normal, exponential, half-Cauchy and Lomax prior
-for the between-studies standard deviation
+for the between-study standard deviation
 such that the probability mass above the reference threshold
 equals the given tail probability.
 The reference threshold used depends on the target RLMC and the with-study
@@ -74,19 +74,19 @@ A list of four scale parameter values (one for each prior considered):
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript submitted to \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
 
 Sorbye, S., Rue, H. (2014). Scaling intrinsic Gaussian Markov random field priors in
 spatial modelling. \emph{Spatial Statistics} \bold{8}, 39--51.
 \url{https://doi.org/10.1016/j.spasta.2013.06.004}
 
-Hoaglin, D. (2016). Misunderstandings about Q and 'Cochran’s Q test' in meta-analysis. 
+Hoaglin, D. (2016). Misunderstandings about Q and "Cochran's Q test" in meta-analysis. 
 \emph{Statistics in Medicine} \bold{35(4)}, 485--495.
 \url{https://doi.org/10.1002/sim.6632}
 }
 
 \seealso{
-\code{\link{pri_par_adjust_static}} 
+\code{\link{pri_par_adjust_static}}, 
 \code{\link{sigma_ref}}
 %for the alternative static tail adjustment of priors
 %% ~~objects to See Also as \code{\link{help}}, ~~~

@@ -58,7 +58,7 @@ A list of the following eight scale parameter values:
 \item{p_LMX_u }{scale parameter of the "upper" Lomax prior (with shape parameter=1) on the grid}
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript submitted to \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
 
 Roos, M., Martins, T., Held, L., Rue, H. (2015). Sensitivity analysis for Bayesian hierarchical models. 
 \emph{Bayesian Analysis} \bold{10(2)}, 321--349.

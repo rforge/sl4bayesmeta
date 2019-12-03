@@ -11,7 +11,7 @@ effective RLMC
 values
 for a meta-analysis data set with effect expressed as log-odds ratios or log-odds.
 Assumes a Bayesian normal-normal hierarchical model with different 
-priors (half-normal, exponential, half-Cauchy and Lomax) for the between-studies standard deviation.
+priors (half-normal, exponential, half-Cauchy and Lomax) for the between-study standard deviation.
 These priors are either 5 \% tail-adjusted or adjusted to a target RLMC value.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
@@ -42,7 +42,7 @@ in the package \code{bayesmeta}.
 }
 \value{
 A matrix with the different estimates in the columns and
-one row per heterogeneity prior (i.e. the prior for the between-studies standard deviation).
+one row per heterogeneity prior (i.e. the prior for the between-study standard deviation).
 The quantities given in the columns are as follows, where 
 mu denotes the effect on the log-odds ratio or log-odds scale and 
 tau the heterogeneity standard deviation:
@@ -75,7 +75,7 @@ The following heterogeneity priors are given in the rows (from top to bottom):
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript submitted to \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
 
 Roos, M., Martins, T., Held, L., Rue, H. (2015). Sensitivity analysis for Bayesian hierarchical models. 
 \emph{Bayesian Analysis} \bold{10(2)}, 321--349.
@@ -97,7 +97,8 @@ on the acute graft rejection data set given in the example below.
 \code{\link[bayesmeta]{bayesmeta}} in package bayesmeta,
 \code{\link{pri_par_adjust_static}}, \cr
 \code{\link{pri_par_adjust_dynamic}},
-\code{\link{effective_rlmc}}
+\code{\link{effective_rlmc}},
+\code{\link{sensitivity_learning_table_flexible}}
 }
 \examples{
 # Acute Graft rejection (AGR) data analyzed in Friede et al. (2017),  
@@ -117,7 +118,7 @@ df <- data.frame(y = log((rT*(nC-rC))/(rC*(nT-rT))), # log-OR
 # compute the table for the AGR data
 # warning: it takes ca. 5-10 minutes to run this function
 # on the above data set!
-sensitivity_learning_table(df)
+# sensitivity_learning_table(df)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

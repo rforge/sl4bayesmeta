@@ -8,6 +8,11 @@
 The main function \code{\link{sensitivity_learning_table}}() provides posterior, sensitivity and learning estimates
 for the Bayesian normal-normal hierarchical model used for Bayesian meta-analysis
 under four different heterogeneity priors (half-normal, half-Cauchy, exponential, Lomax).
+The more advanced function \code{\link{sensitivity_learning_table_flexible}}()
+enables a flexible choice of several parameters
+and supports computation of the reference within-study standard deviation
+based on both the geometric mean and a weighted harmonic mean.
+
 In order to unify notation, the heterogeneity priors are defined
 as scaled distributions \eqn{\tau \sim A_0 |X|}{tau ~ A_0 |X|},
 where \eqn{A_0} is a scale parameter and
@@ -25,9 +30,9 @@ Type: Package
 
 Title: Sensitivity and learning for the Bayesian meta-analysis
 
-Version: 0.1-1
+Version: 0.2-1
 
-Date: 2019-09-04
+Date: 2019-12-03
 
 Author: Manuela Ott [aut, cre], Malgorzata Roos [aut] 
 

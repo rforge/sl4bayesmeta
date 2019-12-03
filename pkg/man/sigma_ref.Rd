@@ -40,7 +40,7 @@ of the standard deviations of the individual studies
  More precisely, we have
  \deqn{\sigma_{ref} = \sqrt{ (k-1) \sum w_i /((\sum w_i)^2 - \sum w_i^2)},}
  where \eqn{k} is the number of studies in the data frame \code{df} and the weights are
- \eqn{w_i=s_i^{-2}}, i =1, ... , k, for the standard deviations \eqn{s_i} (or standard errors)
+ \eqn{w_i=s_i^{-2}}, \eqn{i =1, ... , k}, for the standard deviations \eqn{s_i} (or standard errors)
  of the individual studies.
 }
 \value{
@@ -56,7 +56,7 @@ Sorbye, S., Rue, H. (2014). Scaling intrinsic Gaussian Markov random field prior
 spatial modelling. \emph{Spatial Statistics} \bold{8}, 39--51.
 \url{https://doi.org/10.1016/j.spasta.2013.06.004}
 
-Hoaglin, D. (2016). Misunderstandings about Q and 'Cochran’s Q test' in meta-analysis. 
+Hoaglin, D. (2016). Misunderstandings about Q and "Cochran's Q test" in meta-analysis. 
 \emph{Statistics in Medicine} \bold{35(4)}, 485--495.
 \url{https://doi.org/10.1002/sim.6632}
 %% ~put references to the literature/web site here ~

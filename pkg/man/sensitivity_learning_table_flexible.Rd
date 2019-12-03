@@ -11,8 +11,10 @@ effective RLMC
 values
 for a meta-analysis data set with effect expressed as log-odds ratios or log-odds.
 Is a generalized version of the \code{sensitivity_learning_table()}
-function, which allows to adapt multiple parameters
+function, which enables a flexible choice of multiple parameters
 that are fixed in the latter function.
+This function supports computation of the reference within-study standard deviation
+based on both the geometric mean (the default) and a weighted harmonic mean.
 Assumes a Bayesian normal-normal hierarchical model with different 
 priors (half-normal, exponential, half-Cauchy and Lomax) for the between-study standard deviation.
 These priors are either tail_alpha_static \% tail-adjusted or adjusted to a target RLMC value
@@ -84,12 +86,20 @@ The shape parameter of the Lomax prior is fixed at 1.
 The posterior estimates are obtained from the \code{bayesmeta()} function
 in the package \code{bayesmeta}.
 
-The default value for \code{tail_alpha_static} is based 
+The default values of the parameters correspond
+to the values used in the simpler \code{sensitivity_learning_table}()
+function.
+These values have been chosen as follows:
+for \code{tail_alpha_static}, the default value is based 
 on the half-normal prior with scale parameter 0.5 and the reference threshold
 U1=1: we have P[HN(0.5)>1]=0.04550026.
-The default value 0.00354 for \code{grid_epsilon} corresponds to the
+For the mean and the standard deviation 
+of the normal prior for the effect mu, we use the default values
+ recommended by Roever (2018) for outcomes on the log-odds ratio scale,
+which are also suitable for the log-odds scale.
+For \code{grid_epsilon}, the default value 0.00354 corresponds to the
 Hellinger distance between two unit-variance normal distributions
-with means 0 and 0.01.
+with means 0 and 0.01 (Roos et al., 2015).
 
 %%  ~~ If necessary, more details than the description above ~~
 }
@@ -128,7 +138,9 @@ The following heterogeneity priors are given in the rows (from top to bottom):
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript submitted to \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+
+Roever C. Bayesian random-effects meta-analysis using the bayesmeta R package. \emph{Journal of Statistical Software} (accepted), 2018. 
 
 Roos, M., Martins, T., Held, L., Rue, H. (2015). Sensitivity analysis for Bayesian hierarchical models. 
 \emph{Bayesian Analysis} \bold{10(2)}, 321--349.
@@ -172,8 +184,8 @@ df <- data.frame(y = log((rT*(nC-rC))/(rC*(nT-rT))), # log-OR
 # and a weighted harmonic mean to compute the reference sd
 # warning: it takes ca. 5-10 minutes to run this function
 # on the above data set!
-sensitivity_learning_table_flexible(df, rlmc1=0.4, rlmc2=0.7, 
-                                    type_sigma_ref="harmonic")
+#sensitivity_learning_table_flexible(df, rlmc1=0.4, rlmc2=0.7, 
+#                                    type_sigma_ref="harmonic")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
