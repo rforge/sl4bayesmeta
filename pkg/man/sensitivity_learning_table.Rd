@@ -118,7 +118,7 @@ df <- data.frame(y = log((rT*(nC-rC))/(rC*(nT-rT))), # log-OR
 # compute the table for the AGR data
 # warning: it takes ca. 5-10 minutes to run this function
 # on the above data set!
-# sensitivity_learning_table(df)
+sensitivity_learning_table(df)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -184,8 +184,8 @@ df <- data.frame(y = log((rT*(nC-rC))/(rC*(nT-rT))), # log-OR
 # and a weighted harmonic mean to compute the reference sd
 # warning: it takes ca. 5-10 minutes to run this function
 # on the above data set!
-#sensitivity_learning_table_flexible(df, rlmc1=0.4, rlmc2=0.7, 
-#                                    type_sigma_ref="harmonic")
+sensitivity_learning_table_flexible(df, rlmc1=0.4, rlmc2=0.7, 
+                                    type_sigma_ref="harmonic")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
