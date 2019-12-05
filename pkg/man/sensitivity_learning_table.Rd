@@ -97,7 +97,7 @@ on the acute graft rejection data set given in the example below.
 \code{\link[bayesmeta]{bayesmeta}} in package bayesmeta,
 \code{\link{pri_par_adjust_static}}, \cr
 \code{\link{pri_par_adjust_dynamic}},
-\code{\link{effective_rlmc}},
+\code{\link{effective_rlmc}}, \cr
 \code{\link{sensitivity_learning_table_flexible}}
 }
 \examples{

@@ -32,7 +32,7 @@ Title: Sensitivity and learning for the Bayesian meta-analysis
 
 Version: 0.2-1
 
-Date: 2019-12-03
+Date: 2019-12-05
 
 Author: Manuela Ott [aut, cre], Malgorzata Roos [aut] 
 
@@ -53,7 +53,7 @@ Manuela Ott, Malgorzata Roos
 Maintainer: \packageMaintainer{sl4bayesmeta}
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript submitted to \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
 
 Spiegelhalter, D., Abrams, K., Myles, J. (2004). Bayesian Approaches to Clinical Trials and Health-Care Evaluation. John Wiley & Sons, Ltd.
 }

@@ -2,7 +2,7 @@
 \alias{sensitivity_learning_table_flexible}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Posterior, sensitivity and learning estimates for Bayesian meta-analysis: Flexible version of the basic function
+Posterior, sensitivity and learning estimates for Bayesian meta-analysis: Flexible version of the basic \code{sensitivity_learning_table} function
 %%  ~~function to do ... ~~
 }
 \description{
@@ -17,8 +17,8 @@ This function supports computation of the reference within-study standard deviat
 based on both the geometric mean (the default) and a weighted harmonic mean.
 Assumes a Bayesian normal-normal hierarchical model with different 
 priors (half-normal, exponential, half-Cauchy and Lomax) for the between-study standard deviation.
-These priors are either tail_alpha_static \% tail-adjusted or adjusted to a target RLMC value
-(with respect to a tail probability tail_alpha_dynamic).
+These priors are either \code{tail_alpha_static}-tail adjusted or adjusted to a target RLMC value
+(with respect to a tail probability \code{tail_alpha_dynamic}).
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -69,8 +69,8 @@ sensitivity_learning_table_flexible(df, tail_alpha_static=0.04550026,
 \item{grid_epsilon}{
 %  value for epsilon, the Hellinger distance between the base prior and the
 % "lower"/"upper" prior on the grid
-  step size of the grid for the epsilon-local sensitivity computation.
-  See \cr \code{\link{pri_par_epsilon_grid}} for details.
+  step size of the grid for the epsilon-local sensitivity computation. \cr
+  See \code{\link{pri_par_epsilon_grid}} for details.
 }
 }
 \details{
@@ -87,7 +87,8 @@ The posterior estimates are obtained from the \code{bayesmeta()} function
 in the package \code{bayesmeta}.
 
 The default values of the parameters correspond
-to the values used in the simpler \code{sensitivity_learning_table}()
+to the values used in the basic \cr
+\code{sensitivity_learning_table}()
 function.
 These values have been chosen as follows:
 for \code{tail_alpha_static}, the default value is based 
@@ -127,10 +128,10 @@ tau the heterogeneity standard deviation:
 \item{S_tau }{sensitivity estimate for tau}
 
 The following heterogeneity priors are given in the rows (from top to bottom):
-  \item{HN(0.5)_U1tail, EXP_U1tail, HC_U1tail, LMX_U1tail }{half-normal, exponential, half-Caucy and Lomax prior, all tail_alpha_static \%-tail adjusted with threshold U=U1 (static)}
- \item{HN_rlmc1, EXP_rlmc1, HC_rlmc1, LMX_rlmc1 }{dynamically adjusted with target RLMC=rlmc1 and tail probability \cr tail_alpha_dynamic}
-   \item{HN(1)_U2tail, EXP_U2tail5, HC_U2tail5, LMX_U2tail }{tail_alpha_static \%-tail adjusted with threshold U=U2 (static)}
-   \item{HN_rlmc2, EXP_rlmc2, HC_rlmc2, LMX_rlmc2 }{dynamically adjusted with target RLMC=rlmc2 and tail probability \cr tail_alpha_dynamic}
+  \item{HN_U1tail, EXP_U1tail, HC_U1tail, LMX_U1tail }{half-normal, exponential, half-Caucy and Lomax prior, all \cr \code{tail_alpha_static}-tail adjusted with threshold U=\code{U1} (static)}
+ \item{HN_rlmc1, EXP_rlmc1, HC_rlmc1, LMX_rlmc1 }{dynamically adjusted with target RLMC=\code{rlmc1} and tail probability \cr \code{tail_alpha_dynamic}}
+   \item{HN_U2tail, EXP_U2tail5, HC_U2tail5, LMX_U2tail }{\code{tail_alpha_static}-tail adjusted with threshold U=\code{U2} (static)}
+   \item{HN_rlmc2, EXP_rlmc2, HC_rlmc2, LMX_rlmc2 }{dynamically adjusted with target RLMC=\code{rlmc2} and tail probability \cr \code{tail_alpha_dynamic}}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

@@ -102,9 +102,9 @@ sensitivity_learning_table_flexible <- function(df, tail_alpha_static=0.04550026
                     "median_post_OR", "95CrI_post_OR_low", "95CrI_post_OR_up", "length_95CrI_post_OR", 
                     "median_post_tau", "95CrI_post_tau_low", "95CrI_post_tau_up", "length_95CrI_post_tau",
                     "L_mu", "L_tau", "S_mu", "S_tau")
-  rownames(tres)<-c("HN(0.5)_U1tail", "EXP_U1tail", "HC_U1tail", "LMX_U1tail",
+  rownames(tres)<-c("HN_U1tail", "EXP_U1tail", "HC_U1tail", "LMX_U1tail",
                     "HN_rlmc1", "EXP_rlmc1", "HC_rlmc1", "LMX_rlmc1",
-                    "HN(1)_U2tail", "EXP_U2tail", "HC_U2tail", "LMX_U2tail",
+                    "HN_U2tail", "EXP_U2tail", "HC_U2tail", "LMX_U2tail",
                     "HN_rlmc2", "EXP_rlmc2", "HC_rlmc2", "LMX_rlmc2")
   
   

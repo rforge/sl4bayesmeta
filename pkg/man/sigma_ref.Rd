@@ -40,7 +40,7 @@ of the standard deviations of the individual studies
  More precisely, we have
  \deqn{\sigma_{ref} = \sqrt{ (k-1) \sum w_i /((\sum w_i)^2 - \sum w_i^2)},}
  where \eqn{k} is the number of studies in the data frame \code{df} and the weights are
- \eqn{w_i=s_i^{-2}}, \eqn{i =1, ... , k}, for the standard deviations \eqn{s_i} (or standard errors)
+ \eqn{w_i=\sigma_i^{-2}}, \eqn{i =1, ... , k}, for the standard deviations \eqn{\sigma_i} (or standard errors)
  of the individual studies.
 }
 \value{
