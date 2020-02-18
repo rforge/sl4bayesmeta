@@ -58,11 +58,11 @@ sensitivity_learning_table_flexible(df, tail_alpha_static=0.04550026,
 }
 \item{scale_effect}{
   either \code{"OR"} or \code{"logOR"}. Defaults to \code{"OR"}.
-  Specifies if the effect estimates are given on the odds (ratio)
+  Specifies the scale for effect estimates returned: either the odds (ratio)
   or log-odds (ratio) scale.
  % Note that OR=exp(mu).
 }
-\item{type_sigma_ref}{
+\item{type_sigma_ref}{ 
   either \code{"geometric"} or \code{"harmonic"}. Defaults to \code{"geometric"}.
    Specifies if the geometric mean or a weighted harmonic mean is used to compute
    the reference standard deviation. See \code{\link{sigma_ref}} for details.
