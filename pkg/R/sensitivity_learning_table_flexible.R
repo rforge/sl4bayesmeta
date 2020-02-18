@@ -1,7 +1,8 @@
 
 sensitivity_learning_table_flexible <- function(df, tail_alpha_static=0.04550026, U1=1, U2=2, 
                                                tail_alpha_dynamic=0.5, rlmc1=0.25, rlmc2=0.5, 
-                                               type_sigma_ref="geometric", mu_mean=0, mu_sd=4, grid_epsilon=0.00354){
+                                               scale_effect="OR", type_sigma_ref="geometric", 
+                                               mu_mean=0, mu_sd=4, grid_epsilon=0.00354){
   # This flexible function enables a flexible change of all parameters and provides redundant programming.
   # If necessary, this function can be split into parts without much recoding.
   # It takes ca. 10 min to run this function.
@@ -58,7 +59,7 @@ sensitivity_learning_table_flexible <- function(df, tail_alpha_static=0.04550026
   # library(bayesmeta)
   # Version downloaded on 20180928
   
-  ####---- parameters for leraning and sensitivity computation (are now provided in the call of the flexible function) ----####
+  ####---- parameters for learning and sensitivity computation (are now provided in the call of the flexible function) ----####
   
   # # mu_mean: mean of the Normal prior for mu
   # mu_mean <- 0
@@ -98,10 +99,16 @@ sensitivity_learning_table_flexible <- function(df, tail_alpha_static=0.04550026
   
   
   tres<-matrix(NA, nrow=16, ncol=16)
-  colnames(tres)<-c("U", "tail_prob", "par_val", "MRLMC", 
-                    "median_post_OR", "95CrI_post_OR_low", "95CrI_post_OR_up", "length_95CrI_post_OR", 
-                    "median_post_tau", "95CrI_post_tau_low", "95CrI_post_tau_up", "length_95CrI_post_tau",
-                    "L_mu", "L_tau", "S_mu", "S_tau")
+  
+  if(!(scale_effect=="OR" || scale_effect=="logOR"))
+    warning(paste0("scale_effect must either be ", "OR", "or ","logOR",
+                   sep=""))
+
+   colnames(tres)<-c("U", "tail_prob", "par_val", "MRLMC", 
+                     "median_post_OR", "95CrI_post_OR_low", "95CrI_post_OR_up", "length_95CrI_post_OR", 
+                     "median_post_tau", "95CrI_post_tau_low", "95CrI_post_tau_up", "length_95CrI_post_tau",
+                     "L_mu", "L_tau", "S_mu", "S_tau")
+  
   rownames(tres)<-c("HN_U1tail", "EXP_U1tail", "HC_U1tail", "LMX_U1tail",
                     "HN_rlmc1", "EXP_rlmc1", "HC_rlmc1", "LMX_rlmc1",
                     "HN_U2tail", "EXP_U2tail", "HC_U2tail", "LMX_U2tail",
@@ -1295,6 +1302,10 @@ sensitivity_learning_table_flexible <- function(df, tail_alpha_static=0.04550026
   
   tres[,8]<-tres[,7]-tres[,6] #length_95CrI_post_OR
   tres[,12]<-tres[,11]-tres[,10] #length_95CrI_post_tau
+  
+  # transformation of effect estimates to log scale
+  if(scale_effect=="logOR")
+    tres <- or2logor(tres)
   
   return(tres)
 }

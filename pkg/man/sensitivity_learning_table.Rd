@@ -31,7 +31,7 @@ The sensitivity measure used is epsilon-local sensitivity (Roos et al. 2015), wh
 Hellinger distance.
 Here, learning refers to the ability of the data to modify the prior.
 It is quantified by the Hellinger distance between the prior and its marginal posterior.
-See Ott et al. (2019) for a description of the implemented methodology and some examples.
+See Ott et al. (2020) for a description of the implemented methodology and some examples.
 
 The shape parameter of the Lomax prior is fixed at 1.
 The reference thresholds used for the 5 \% tail-adjustment are U=1 and 
@@ -75,13 +75,21 @@ The following heterogeneity priors are given in the rows (from top to bottom):
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. Sensitivity quantification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2020.
 
 Roos, M., Martins, T., Held, L., Rue, H. (2015). Sensitivity analysis for Bayesian hierarchical models. 
 \emph{Bayesian Analysis} \bold{10(2)}, 321--349.
 \url{https://projecteuclid.org/euclid.ba/1422884977}
 }
 \note{
+This function covers the 5\%-tail and the RLMC-based adjustment
+of heterogeneity priors, but not
+ the 50\%-tail adjustment (which is not based on RLMC) considered in
+Ott et al. (2020).
+That adjustment can be studied by using the function
+\code{sensitivity_learning_table_flexible}.
+%It focusses on the 5\%-tail and the RLMC-based adjustment.
+
 For effects which are not on the log-odds (ratio) scale, the prior for the effect
 needs to be adjusted, but otherwise the same code can be used
 if a Bayesian normal-normal hierarchical model is appropriate.

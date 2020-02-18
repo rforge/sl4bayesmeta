@@ -25,7 +25,8 @@ These priors are either \code{tail_alpha_static}-tail adjusted or adjusted to a 
 sensitivity_learning_table_flexible(df, tail_alpha_static=0.04550026, 
                                     U1=1, U2=2, 
                                     tail_alpha_dynamic=0.5, 
-                                    rlmc1=0.25, rlmc2=0.5, 
+                                    rlmc1=0.25, rlmc2=0.5,
+                                    scale_effect="OR",
                                     type_sigma_ref="geometric", 
                                     mu_mean=0, mu_sd=4, 
                                     grid_epsilon=0.00354)
@@ -55,16 +56,22 @@ sensitivity_learning_table_flexible(df, tail_alpha_static=0.04550026,
 \item{rlmc2}{
   second target value for RLMC
 }
+\item{scale_effect}{
+  either \code{"OR"} or \code{"logOR"}. Defaults to \code{"OR"}.
+  Specifies if the effect estimates are given on the odds (ratio)
+  or log-odds (ratio) scale.
+ % Note that OR=exp(mu).
+}
 \item{type_sigma_ref}{
   either \code{"geometric"} or \code{"harmonic"}. Defaults to \code{"geometric"}.
    Specifies if the geometric mean or a weighted harmonic mean is used to compute
    the reference standard deviation. See \code{\link{sigma_ref}} for details.
 }
 \item{mu_mean}{
-  mean of the normal prior for the effect mu. Defaults to 0.
+  mean of the normal prior for the effect mu on the log-odds (ratio) scale. Defaults to 0.
 }
 \item{mu_sd}{
-  standard deviation of the normal prior for the effect mu. Defaults to 4.
+  standard deviation of the normal prior for the effect mu on the log-odds (ratio) scale. Defaults to 4.
 }
 \item{grid_epsilon}{
 %  value for epsilon, the Hellinger distance between the base prior and the
@@ -78,7 +85,12 @@ The sensitivity measure used is epsilon-local sensitivity (Roos et al. 2015), wh
 Hellinger distance.
 Here, learning refers to the ability of the data to modify the prior.
 It is quantified by the Hellinger distance between the prior and its marginal posterior.
-See Ott et al. (2019) for a description of the implemented methodology and some examples.
+See Ott et al. (2020) for a description of the implemented methodology and some examples.
+Since the sensitivity and learning measures are invariant
+with respect to monotone transformations of the parameter,
+the sensitvity and learning estimates do not change if
+we switch from the odds (ratio) scale to the log-odds (ratio) scale or
+vice versa.
 
 The shape parameter of the Lomax prior is fixed at 1.
 %The reference thresholds used for the 5 \% tail-adjustment are U=1 and 
@@ -107,17 +119,18 @@ with means 0 and 0.01 (Roos et al., 2015).
 \value{
 A matrix with the different estimates in the columns and
 one row per heterogeneity prior (i.e. the prior for the between-study standard deviation).
-The quantities given in the columns are as follows, where 
-mu denotes the effect on the log-odds ratio or log-odds scale and 
+If \code{scale_effect="OR"},
+the quantities given in the columns are as follows, where 
+OR=exp(mu) denotes the effect on the odds ratio or odds scale and 
 tau the heterogeneity standard deviation:
 \item{U }{reference threshold for prior adjustment}
 \item{tail_prob }{tail probability for prior adjustment}
 \item{par_val }{scale parameter value of the heterogeneity prior}
 \item{MRLMC }{median relative latent model complexity estimated from MC sampling}
-\item{median_post_mu }{posterior median for the effect mu}
-\item{95CrI_post_mu_low }{lower end point of the 95 \% shortest credible interval (CrI) for the effect mu}
-\item{95CrI_post_mu_up }{upper end point of the 95 \% shortest CrI for the effect mu}
-\item{length_95CrI_post_mu }{length of the 95 \% shortest CrI for the effect mu}
+\item{median_post_OR }{posterior median for the effect OR-exp(mu)}
+\item{95CrI_post_OR_low }{lower end point of the 95 \% shortest credible interval (CrI) for the effect OR}
+\item{95CrI_post_OR_up }{upper end point of the 95 \% shortest CrI for the effect OR}
+\item{length_95CrI_post_OR }{length of the 95 \% shortest CrI for the effect OR}
 \item{median_post_tau }{posterior median for tau}
 \item{95CrI_post_tau_low}{lower end point of the 95 \% shortest CrI for tau}
 \item{95CrI_post_tau_up }{upper end point of the 95 \% shortest CrI for tau}
@@ -126,6 +139,16 @@ tau the heterogeneity standard deviation:
 \item{L_tau }{learning estimate for tau}
 \item{S_mu }{sensitivity estimate for the effect mu}
 \item{S_tau }{sensitivity estimate for tau}
+If \code{scale_effect="logOR"},
+then the estimates in columns 5-8 and the corresponding column names are adapted as follows
+(the remaining columns remain unchanged), where 
+mu denotes the effect on the
+log-odds ratio or log-odds scale:
+\item{median_post_mu }{posterior median for the effect mu}
+\item{95CrI_post_mu_low }{lower end point of the 95 \% shortest credible interval (CrI) for the effect mu}
+\item{95CrI_post_mu_up }{upper end point of the 95 \% shortest CrI for the effect mu}
+\item{length_95CrI_post_mu }{length of the 95 \% shortest CrI for the effect mu}
+
 
 The following heterogeneity priors are given in the rows (from top to bottom):
   \item{HN_U1tail, EXP_U1tail, HC_U1tail, LMX_U1tail }{half-normal, exponential, half-Caucy and Lomax prior, all \cr \code{tail_alpha_static}-tail adjusted with threshold U=\code{U1} (static)}
@@ -139,7 +162,7 @@ The following heterogeneity priors are given in the rows (from top to bottom):
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. Sensitivity quantification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2020.
 
 Roever C. Bayesian random-effects meta-analysis using the bayesmeta R package. \emph{Journal of Statistical Software} (accepted), 2018. 
 

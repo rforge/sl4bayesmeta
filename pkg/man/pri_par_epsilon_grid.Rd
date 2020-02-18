@@ -39,7 +39,7 @@ pri_par_epsilon_grid(AA0_HN, AA0_EXP, AA0_HC, AA0_LMX,
 \details{
 This 1-dimensional epsilon grid is needed for computation of the
 epsilon-local sensitivity in the function \code{sensitivity_learning_table}.
-See Ott et al. (2019) for a brief description of this methodology and Roos et al. (2015) for more details.
+See Ott et al. (2020) for a brief description of this methodology and Roos et al. (2015) for more details.
 The default value for \code{grid_epsilon} corresponds to the 
 Hellinger distance between two normal distribution with unit variance and
 a difference in means of 0.01,
@@ -58,7 +58,7 @@ A list of the following eight scale parameter values:
 \item{p_LMX_u }{scale parameter of the "upper" Lomax prior (with shape parameter=1) on the grid}
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. Sensitivity quantification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2020.
 
 Roos, M., Martins, T., Held, L., Rue, H. (2015). Sensitivity analysis for Bayesian hierarchical models. 
 \emph{Bayesian Analysis} \bold{10(2)}, 321--349.

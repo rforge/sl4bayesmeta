@@ -13,5 +13,6 @@ export(effective_rlmc)
 export(pri_par_epsilon_grid)
 export(sigma_ref)
 export(cal_h_dist)
+export(or2logor)
 
 

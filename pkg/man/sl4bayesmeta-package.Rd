@@ -17,7 +17,7 @@ In order to unify notation, the heterogeneity priors are defined
 as scaled distributions \eqn{\tau \sim A_0 |X|}{tau ~ A_0 |X|},
 where \eqn{A_0} is a scale parameter and
 \eqn{X} is the standard form of the distribution.
-The methodology implemented is proposed in Ott et al. (2019).
+The methodology implemented is proposed in Ott et al. (2020).
 The function \code{\link{pri_par_adjust_dynamic}}() implements the novel heterogeneity prior adjustment
 with respect to the relative latent model complexity (RLMC).
 The function \code{\link{pri_par_adjust_static}}() implements the standard approach to
@@ -28,11 +28,11 @@ Package: sl4bayesmeta
 
 Type: Package
 
-Title: Sensitivity and learning for the Bayesian meta-analysis
+Title: Sensitivity and learning for Bayesian meta-analysis
 
-Version: 0.2-1
+Version: 0.3-1
 
-Date: 2019-12-05
+Date: 2020-02-18
 
 Author: Manuela Ott [aut, cre], Malgorzata Roos [aut] 
 
@@ -53,7 +53,7 @@ Manuela Ott, Malgorzata Roos
 Maintainer: \packageMaintainer{sl4bayesmeta}
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. Sensitivity quantification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2020.
 
 Spiegelhalter, D., Abrams, K., Myles, J. (2004). Bayesian Approaches to Clinical Trials and Health-Care Evaluation. John Wiley & Sons, Ltd.
 }

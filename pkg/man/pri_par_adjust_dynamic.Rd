@@ -47,7 +47,7 @@ and the specified tail probability.
 This prior adjustment applies to Bayesian meta-analysis
 expressed by a normal-normal hierarchical model.
 
-Ott et al. (2019) suggest to use \code{tail_prob=0.5} as default,
+Ott et al. (2020) suggest to use \code{tail_prob=0.5} as default,
 so that the medians of the priors will be aligned with the reference threshold.
 %%  ~~ If necessary, more details than the description above ~~
 
@@ -74,7 +74,7 @@ A list of four scale parameter values (one for each prior considered):
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. Sensitivity quantification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2020.
 
 Sorbye, S., Rue, H. (2014). Scaling intrinsic Gaussian Markov random field priors in
 spatial modelling. \emph{Spatial Statistics} \bold{8}, 39--51.

@@ -40,7 +40,7 @@ effective_rlmc(df, r.tau.prior, MM=10^6, output="sample",
 }
 }
 \details{
-For the definition of RLMC and further information, see Ott et al. (2019).
+For the definition of RLMC and further information, see Ott et al. (2020).
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
@@ -56,7 +56,7 @@ If \code{output=="prob"}: a data frame with columns "x" and "y", giving the valu
 %% ...
 }
 \references{
-Ott, M., Hunanyan, S., Held, L., Roos, M. The relative latent model complexity adjustment for heterogeneity prior specification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2019.
+Ott, M., Hunanyan, S., Held, L., Roos, M. Sensitivity quantification in Bayesian meta-analysis. Manuscript revised for \emph{Research Synthesis Methods}. 2020.
 %% ~put references to the literature/web site here ~
 }
 
