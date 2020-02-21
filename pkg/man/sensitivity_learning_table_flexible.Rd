@@ -9,10 +9,9 @@ Posterior, sensitivity and learning estimates for Bayesian meta-analysis: Flexib
 Generates a table containing posterior, sensitivity and learning estimates and
 effective RLMC 
 values
-for a meta-analysis data set with effect expressed as log-odds ratios or log-odds.
-Is a generalized version of the \code{sensitivity_learning_table()}
-function, which enables a flexible choice of multiple parameters
-that are fixed in the latter function.
+for a meta-analysis data set with odds (ratios) as effects.
+The effect estimates returned are either given on the odds (ratio) scale (the default)
+or on the log-odds (ratio) scale.
 This function supports computation of the reference within-study standard deviation
 based on both the geometric mean (the default) and a weighted harmonic mean.
 Assumes a Bayesian normal-normal hierarchical model with different 
@@ -81,6 +80,10 @@ sensitivity_learning_table_flexible(df, tail_alpha_static=0.04550026,
 }
 }
 \details{
+This function is a generalized version of the basic \code{sensitivity_learning_table()}
+function, which enables a flexible choice of multiple parameters
+that are fixed in the latter function.
+
 The sensitivity measure used is epsilon-local sensitivity (Roos et al. 2015), which is based on the
 Hellinger distance.
 Here, learning refers to the ability of the data to modify the prior.
@@ -90,7 +93,8 @@ Since the sensitivity and learning measures are invariant
 with respect to monotone transformations of the parameter,
 the sensitvity and learning estimates do not change if
 we switch from the odds (ratio) scale to the log-odds (ratio) scale or
-vice versa.
+vice versa,
+i.e. S(OR)=S(mu) and L(OR)=L(mu).
 
 The shape parameter of the Lomax prior is fixed at 1.
 %The reference thresholds used for the 5 \% tail-adjustment are U=1 and 
@@ -135,9 +139,9 @@ tau the heterogeneity standard deviation:
 \item{95CrI_post_tau_low}{lower end point of the 95 \% shortest CrI for tau}
 \item{95CrI_post_tau_up }{upper end point of the 95 \% shortest CrI for tau}
 \item{length_95CrI_post_tau }{length of the 95 \% shortest CrI for tau}
-\item{L_mu }{learning estimate for the effect mu}
+\item{L_mu }{learning estimate for the effect mu (\code{L_mu=L_OR})}
 \item{L_tau }{learning estimate for tau}
-\item{S_mu }{sensitivity estimate for the effect mu}
+\item{S_mu }{sensitivity estimate for the effect mu (\code{S_mu=S_OR})}
 \item{S_tau }{sensitivity estimate for tau}
 If \code{scale_effect="logOR"},
 then the estimates in columns 5-8 and the corresponding column names are adapted as follows
@@ -187,7 +191,8 @@ on the acute graft rejection data set given in the example below.
 \code{\link{pri_par_adjust_static}}, \cr
 \code{\link{pri_par_adjust_dynamic}},
 \code{\link{effective_rlmc}},
-\code{\link{pri_par_epsilon_grid}}
+\code{\link{pri_par_epsilon_grid}},
+\code{\link{or2logor}}
 }
 \examples{
 # Acute Graft rejection (AGR) data analyzed in Friede et al. (2017),  
@@ -204,11 +209,13 @@ df <- data.frame(y = log((rT*(nC-rC))/(rC*(nT-rT))), # log-OR
                  sigma = sqrt(1/rT+1/(nT-rT)+1/rC+1/(nC-rC)), # SE(log-OR)
                  labels = c(1:2))
   
-# compute the table for the AGR data with RLMC target values 0.4 and 0.7
+# compute the table for the AGR data with median (alpha=50\%) tail-
+# adjustment with thresholds U1=0.337 and U2=0.674
 # and a weighted harmonic mean to compute the reference sd
 # warning: it takes ca. 5-10 minutes to run this function
 # on the above data set!
-sensitivity_learning_table_flexible(df, rlmc1=0.4, rlmc2=0.7, 
+sensitivity_learning_table_flexible(df, tail_alpha_static=0.5,
+                                    U1=0.337, U2=0.674,
                                     type_sigma_ref="harmonic")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

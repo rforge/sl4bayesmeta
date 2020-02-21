@@ -5,10 +5,10 @@
 \packageTitle{sl4bayesmeta}
 }
 \description{
-The main function \code{\link{sensitivity_learning_table}}() provides posterior, sensitivity and learning estimates
+The basic function \code{\link{sensitivity_learning_table}}() provides posterior, sensitivity and learning estimates
 for the Bayesian normal-normal hierarchical model used for Bayesian meta-analysis
 under four different heterogeneity priors (half-normal, half-Cauchy, exponential, Lomax).
-The more advanced function \code{\link{sensitivity_learning_table_flexible}}()
+The more advanced main function \code{\link{sensitivity_learning_table_flexible}}()
 enables a flexible choice of several parameters
 and supports computation of the reference within-study standard deviation
 based on both the geometric mean and a weighted harmonic mean.
@@ -32,7 +32,7 @@ Title: Sensitivity and learning for Bayesian meta-analysis
 
 Version: 0.3-1
 
-Date: 2020-02-18
+Date: 2020-02-21
 
 Author: Manuela Ott [aut, cre], Malgorzata Roos [aut] 
 
