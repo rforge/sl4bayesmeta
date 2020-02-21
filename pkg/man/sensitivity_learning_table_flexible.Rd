@@ -9,7 +9,7 @@ Posterior, sensitivity and learning estimates for Bayesian meta-analysis: Flexib
 Generates a table containing posterior, sensitivity and learning estimates and
 effective RLMC 
 values
-for a meta-analysis data set with odds (ratios) as effects.
+for a meta-analysis data set with effects expressed as log-odds (ratios).
 The effect estimates returned are either given on the odds (ratio) scale (the default)
 or on the log-odds (ratio) scale.
 This function supports computation of the reference within-study standard deviation
