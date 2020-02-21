@@ -10,7 +10,6 @@ Generates a table containing posterior, sensitivity and learning estimates and
 effective RLMC 
 values
 for a meta-analysis data set with effects expressed as log-odds ratios or log-odds.
-%The effect estimates are also given on the log-odds (ratio) scale.
 Assumes a Bayesian normal-normal hierarchical model with different 
 priors (half-normal, exponential, half-Cauchy and Lomax) for the between-study standard deviation.
 These priors are either 5 \% tail-adjusted or adjusted to a target RLMC value.

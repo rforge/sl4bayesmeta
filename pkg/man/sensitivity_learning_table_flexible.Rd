@@ -80,10 +80,6 @@ sensitivity_learning_table_flexible(df, tail_alpha_static=0.04550026,
 }
 }
 \details{
-This function is a generalized version of the basic \code{sensitivity_learning_table()}
-function, which enables a flexible choice of multiple parameters
-that are fixed in the latter function.
-
 The sensitivity measure used is epsilon-local sensitivity (Roos et al. 2015), which is based on the
 Hellinger distance.
 Here, learning refers to the ability of the data to modify the prior.
@@ -102,6 +98,9 @@ The shape parameter of the Lomax prior is fixed at 1.
 The posterior estimates are obtained from the \code{bayesmeta()} function
 in the package \code{bayesmeta}.
 
+This function is a generalized version of the basic \code{sensitivity_learning_table()}
+function, which enables a flexible choice of multiple parameters
+that are fixed in the latter function.
 The default values of the parameters correspond
 to the values used in the basic \cr
 \code{sensitivity_learning_table}()
